@@ -1,4 +1,4 @@
-@media (min-width: 1025px) and (max-width: 1400px) {
+@media (min-width: 1025px) and (max-width: 2500px) {
   .forcast-card {
     width: 110px;
   }
@@ -83,5 +83,10 @@
   }
   .sun-icons {
     width: 60px;
+  }
+  .forcast .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
