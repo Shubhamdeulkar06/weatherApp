@@ -1,0 +1,87 @@
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .forcast-card {
+    width: 110px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-bar {
+    width: 40%;
+  }
+  .hero-section,
+  .forcast {
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+  }
+  .future {
+    width: 90%;
+  }
+  .forcast {
+    order: 1;
+  }
+  .date-time {
+    text-align: center;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .search-bar {
+    width: 48%;
+    padding: 20px;
+  }
+  .hero-section,
+  .forcast {
+    width: 93%;
+    margin: 10px;
+  }
+  .future {
+    width: 93%;
+  }
+  .forcast {
+    order: 1;
+  }
+  .date-time {
+    text-align: center;
+  }
+  .forcast-card {
+    width: 99px;
+  }
+  .forcast-card h5 {
+    font-size: 15px;
+  }
+  .sun-icons {
+    width: 80px;
+  }
+}
+@media (min-width: 200px) and (max-width: 480px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-bar,
+  main {
+    width: 100%;
+  }
+  .hero-section,
+  .forcast {
+    width: 93%;
+    margin: 10px;
+  }
+  .future {
+    width: 93%;
+  }
+  .forcast {
+    order: 1;
+  }
+  .date-time {
+    text-align: center;
+  }
+  .forcast-card {
+    width: 99px;
+  }
+  .forcast-card h5 {
+    font-size: 15px;
+  }
+  .sun-icons {
+    width: 60px;
+  }
+}

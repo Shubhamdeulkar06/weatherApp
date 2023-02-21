@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Tourney:wght@100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-position: center;
+  background-size: cover;
+  background: linear-gradient(#3eadcf, #abe9cd);
+}
+
+.main-container {
+  display: flex;
+  gap: 20px;
+}
+/* aside bar */
+.search-bar {
+  width: 25%;
+  max-height: 200vh;
+  padding: 20px 30px;
+  background: linear-gradient(#3eadcf, #abe9cd);
+}
+
+.sub-container {
+  margin: 20px 0;
+  border-radius: 20px;
+  background-color: lavender;
+  padding: 10px;
+}
+
+/* main */
+main {
+  width: 73%;
+  background-image: linear-gradient(#37d5d6 #36096d);
+}
+
+/* Hero section */
+.hero-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero-section {
+  width: 65%;
+  margin: 10px;
+  border-radius: 20px;
+  background: linear-gradient(#94cfe0, #abe9cd, #3eadcf, #abe9cd);
+}
+.future {
+  width: 30%;
+  margin: 10px;
+}
+
+.forcast {
+  padding: 20px 40px;
+  background: linear-gradient(#abe9cd, #3eadcf);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
+  border-radius: 20px;
+  width: 98%;
+  justify-content: center;
+  align-items: center;
+}
+.forcast-card {
+  margin: 10px;
+  border-radius: 20px;
+  text-align: center;
+  width: 120px;
+  color: #fff;
+}
+
+#livetime {
+  font-size: 30px;
+  color: #00337c;
+}
+
+.date-time {
+  margin: 10px;
+}
+
+.item1 {
+  background-color: #0a2647;
+}
+.item2 {
+  background-color: #144272;
+}
+.item3 {
+  background-color: #ffd56f;
+}
+.item4 {
+  background-color: #ff7b54;
+}
+.item5 {
+  background-color: #ffb26b;
+}
+.item6 {
+  background-color: #7b8fa1;
+}
+.item7 {
+  background-color: #00337c;
+}
+
+/* fforcast section */
+.date-temp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.twilight {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 12px;
+}
+.twilight-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sun-img {
+  width: 40px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+#inputBox {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.icons {
+  width: 30px;
+}

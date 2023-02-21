@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <!-- adding the css file -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./media.css" />
+
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- <nav>
+      <h1 class="text-center">Weather Web App</h1>
+    </nav> -->
+    <aside class="search-bar ">
+      <!-- section for searching the weather of a city -->
+      <form onsubmit="getData(event)" class="searchData">
+        <div class="row text-center">
+
+          <div class="col">
+            <!-- <label for="inputBox" class="form-label">City</label> -->
+            <div class="input-group input-group-lg">
+              <input id="inputBox" type="text" placeholder="Enter the city name" class="form-control">
+              <button><i class="fa-solid fa-magnifying-glass-location"></i></button>
+
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="sub-container temp-container">
+        <div class="row">
+          <div class="col">
+            <p id="cityName" class="fs-1 fw-bold location ">----</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class=" col text-center">
+            <img width="100px" id="logoImage" src="" />
+            <p><span id="temprature" class="fs-2 fw-bold"></span> &#8451; <span class="fs-4 mx-2"
+                id="weatherStatus"></span></p>
+
+          </div>
+        </div>
+      </div>
+      <div class="sub-container">
+        <div class="row">
+          <div class="col">
+            <p class=" fw-bold"><img class="icons" src="./images/icons8-map-marker-48.png" alt=""> Location: <span
+                id="cityName" class="location loading">
+                ----</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class=" fw-bold"><img class="icons" src="./images/icons8-where-48.png" alt=""> State: <span
+                id="stateName" class="loading"> ----</span>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class=" fw-bold"><img class="icons" src="./images/icons8-country-48.png" alt=""> Country: <span
+                id="countryName" class="loading">
+                ----</span></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class=" fw-bold"><img class="icons" src="./images/icons8-time-zone-64.png" alt=""> Time Zone: <span
+                id="timeZone" class="loading">
+                ----</span></p>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+    <main>
+
+      <!-- container for holding the weather card -->
+      <div class="date-time">
+        <p id="livetime">12:45:45 PM</p>
+        <p id="livedate">17-02-2023</p>
+      </div>
+      <div class="hero-container">
+        <div class="forcast">
+          <div class="row">
+            <div class=" forcast-card item1">
+              <h5 class="">12:00 AM</h5>
+              <p class="">MIDNIGHT</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+            <div class=" forcast-card item2 ">
+              <h5 class="">4:00 AM</h5>
+              <p class="">MORNING</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+            <div class=" forcast-card item3 ">
+              <h5 class="">8:00 AM</h5>
+              <p class="">MORNING</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+            <div class=" forcast-card item4 ">
+              <h5 class="">12:00 PM</h5>
+              <p class="">MIDDAY</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+            <div class=" forcast-card item5 ">
+              <h5 class="">4:00 PM</h5>
+              <p class="">NOON</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+            <div class=" forcast-card item6 ">
+              <h5 class="">8:00 PM</h5>
+              <p class="">EVENING</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+            <div class=" forcast-card item7 ">
+              <h5 class="">11:00 PM</h5>
+              <p class="">NIGHT</p>
+              <p class="temp-degree loading">--</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-section  shadow-lg p-3  bg-body ">
+          <h1 class="text-center">Current Weather</h1>
+          <!-- section for displaying the city weather data -->
+          <section class="cityWeatherData">
+            <div class="row">
+              <!-- displaying the weather condition -->
+              <div class=" col ">
+                <p class="location fs-3 fw-bold loading">----</p>
+              </div>
+              <!-- displaying the current temprature in celcius -->
+
+            </div>
+            <!-- displaying the country details -->
+            <div class=" row text-center ">
+              <!-- displaying the city name -->
+              <div class=" col">
+                <img class="sun-icons" width="100px" src="./images/icons8-sunrise-64.png" alt="sunrise">
+                <p class=" ">Sun Rise: <span id="sunrise" class="loading">--</span></p>
+              </div>
+              <div class=" col">
+                <img class="sun-icons" width="100px" src="./images/icons8-sunset-64.png" alt="sunset">
+                <p class="">Sun Set: <span id="sunset">--</span></p>
+              </div>
+            </div>
+            <div class="row text-center">
+              <div class=" col-lg-3 col-md-6 " class="loading">
+                <p class="card alert-primary">Wind Speed: <span class="loading" id="windSpeed"> --</span></p>
+              </div>
+
+
+              <div class=" col-lg-3 col-md-6 ">
+                <p class="card alert-primary">Wind Direction: <span class="loading" id="windDirection"> --</span></p>
+              </div>
+
+              <!-- displaying the humidity -->
+              <div class=" col-lg-3 col-md-6 ">
+                <p class="card alert-primary">Humidity: <span class="loading" id="humidity"> --</span></p>
+              </div>
+
+
+              <!-- displaying the wind speed -->
+              <div class=" col-lg-3 col-md-6">
+                <p class="card alert-primary">Local Time: <span class="loading" id="time"> --</span></p>
+
+              </div>
+            </div>
+
+
+          </section>
+        </div>
+        <div class="sub-container future">
+          <h2 class="text-center">Forcast</h2>
+          <div class="forcast-details">
+            <div class="date-temp">
+              <p class=" fw-bold "> Date: <span class="future-date">
+                  ----</span></p>
+              <p class=" fw-bold"> Min: <span class="mintemp">
+                  --</span> Max: <span class="maxtemp">
+                  --</span></p>
+            </div>
+            <div class="twilight">
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunrise-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunrise"> --</span></p>
+              </div>
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunset-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunset"> --</span></p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="forcast-details">
+            <div class="date-temp">
+              <p class=" fw-bold"> Date: <span class="future-date">
+                  ----</span></p>
+              <p class=" fw-bold"> Min: <span class="mintemp">
+                  --</span> Max: <span class="maxtemp">
+                  --</span></p>
+            </div>
+            <div class="twilight">
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunrise-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunrise"> --</span></p>
+              </div>
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunset-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunset"> --</span></p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="forcast-details">
+            <div class="date-temp">
+              <p class=" fw-bold"> Date: <span class="future-date">
+                  ----</span></p>
+              <p class=" fw-bold"> Min: <span class="mintemp">
+                  --</span> Max: <span class="maxtemp">
+                  --</span></p>
+            </div>
+            <div class="twilight">
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunrise-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunrise"> --</span></p>
+              </div>
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunset-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunset"> --</span></p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="forcast-details">
+            <div class="date-temp">
+              <p class=" fw-bold"> Date: <span class="future-date">
+                  ----</span></p>
+              <p class=" fw-bold"> Min: <span class="mintemp">
+                  --</span> Max: <span class="maxtemp">
+                  --</span></p>
+            </div>
+            <div class="twilight">
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunrise-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunrise"> --</span></p>
+              </div>
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunset-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunset"> --</span></p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="forcast-details">
+            <div class="date-temp">
+              <p class=" fw-bold"> Date: <span class="future-date">
+                  ----</span></p>
+              <p class=" fw-bold"> Min: <span class="mintemp">
+                  --</span> Max: <span class="maxtemp">
+                  --</span></p>
+            </div>
+            <div class="twilight">
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunrise-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunrise"> --</span></p>
+              </div>
+              <div class="twilight-items">
+                <img class="sun-img" src="./images/icons8-sunset-64.png" alt="">
+                <p class=" fw-bold"> Time: <span class="sunset"> --</span></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+
+<!-- adding the javascript file -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+
+</html>
