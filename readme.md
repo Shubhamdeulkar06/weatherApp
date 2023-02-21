@@ -12,3 +12,7 @@
 ### Api
 
 - https://www.weatherapi.com/
+
+### live link
+
+- https://my-weather-app-06.netlify.app/
