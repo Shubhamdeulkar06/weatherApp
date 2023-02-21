@@ -3,7 +3,36 @@
     width: 110px;
   }
 }
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1370px) {
+  .forcast-card {
+    width: 110px;
+  }
+  .search-bar {
+    width: 25%;
+  }
+  .hero-section {
+    width: 65%;
+  }
+  .forcast {
+    width: 98%;
+    margin: 10px;
+    padding: 10px;
+  }
+  .future {
+    width: 29%;
+  }
+  .hero-container {
+    display: flex;
+    gap: 0px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  /* .date-time {
+    text-align: center;
+  } */
+}
+@media (min-width: 769px) and (max-width: 1023px) {
   .search-bar {
     width: 40%;
   }
@@ -22,8 +51,13 @@
   .date-time {
     text-align: center;
   }
+  .forcast .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 768px) {
   .search-bar {
     width: 48%;
     padding: 20px;
@@ -51,8 +85,13 @@
   .sun-icons {
     width: 80px;
   }
+  .forcast .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
-@media (min-width: 200px) and (max-width: 480px) {
+@media (min-width: 200px) and (max-width: 600px) {
   .main-container {
     display: flex;
     flex-direction: column;
