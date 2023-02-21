@@ -74,6 +74,10 @@ main {
   text-align: center;
   width: 120px;
   color: #fff;
+  padding: 10px 0;
+}
+.forcast-card p {
+  margin: 0;
 }
 
 #livetime {
