@@ -48,7 +48,7 @@ const getData = async (event) => {
       element.innerText = "Updating....";
     });
     const fetchData = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=c89372308b5e443a82c84519232602&q=${city}&days=6`
+      `https://api.weatherapi.com/v1/forecast.json?key=e641d04bc8164a7a9bd103226232403&q=${city}&days=6`
     );
 
     const orgData = await fetchData.json();
